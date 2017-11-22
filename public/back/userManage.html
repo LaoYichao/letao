@@ -42,6 +42,7 @@
     </ul>
   </div>
 </aside>
+
 <section>
   <div class="s-top">
     <a href="#" class="pull-left" id="hide">
@@ -56,9 +57,24 @@
       <li><a href="#">管理系统</a></li>
       <li class="active">用户管理</li>
     </ol>
+    <table class="table table-bordered table-hover text-center">
+      <thead>
+        <tr>
+          <td>序号</td>
+          <td>用户名</td>
+          <td>手机号</td>
+          <td>状态</td>
+          <td>操作</td>
+        </tr>
+      </thead>
+      <tbody>
+        <!--模板-->
+      </tbody>
+    </table>
+    <div class="pull-right"><ul id="paginator"></ul></div>
   </div>
 </section>
-
+<!--退出的模态框-->
 <div class="modal fade " tabindex="-1" id="logoutModal">
   <div class="modal-dialog modal-sm" >
     <div class="modal-content">
@@ -76,10 +92,51 @@
     </div>
   </div>
 </div>
+<!--用户状态（禁启用）的模态框-->
+<div class="modal fade " tabindex="-1" id="statusChange">
+  <div class="modal-dialog modal-sm" >
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">温馨提示</h4>
+      </div>
+      <div class="modal-body">
+        <p class="text-danger"> <i class="glyphicon glyphicon-info-sign"></i>您确定要退出后台管理系统吗？</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="button" class="btn btn-primary">确定</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
+
+<script type="text/html" id="tmp">
+  {{ each rows v i}}
+  <tr>
+    <td>{{(page-1)*5+i+1}}</td>
+    <td>{{v.username}}</td>
+    <td>{{v.mobile}}</td>
+    <td>{{v.isDelete==1?'正常':'禁用'}}</td>
+    <td data-id="{{v.id}}">
+      {{if v.isDelete===1}}
+      <button class="btn btn-danger btn-sm">禁用</button>
+      {{/if}}
+      {{if v.isDelete===0}}
+      <button class="btn btn-success btn-sm">启用</button>
+      {{/if}}
+    </td>
+  </tr>
+  {{/each}}
+</script>
 <script src="lib/jquery/jquery.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
 <script src="js/comment.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="js/userManage.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>

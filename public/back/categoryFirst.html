@@ -52,14 +52,32 @@
     </a>
   </div>
   <div class="container-fluid">
+    
     <ol class="breadcrumb">
       <li><a href="#">管理系统</a></li>
       <li><a href="#">分类管理</a></li>
       <li class="active">一级分类</li>
     </ol>
+    
+    <button id="addfirst" class="btn btn-default">添加分类</button>
+    
+    <table class="table table-bordered table-hover text-center mt_20">
+      <thead>
+      <tr>
+        <td width=20%>序号</td>
+        <td>分类名称</td>
+      </tr>
+      </thead>
+      <tbody>
+      <!--模板-->
+      </tbody>
+    </table>
+    
+    <div class="pull-right"><ul id="paginator"></ul></div>
   </div>
 </section>
 
+<!--退出的模态框-->
 <div class="modal fade " tabindex="-1" id="logoutModal">
   <div class="modal-dialog modal-sm" >
     <div class="modal-content">
@@ -72,15 +90,52 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-        <button type="button" class="btn btn-primary">确定</button>
+        <button type="button" class="btn btn-primary logout_comfirm">确定</button>
       </div>
     </div>
   </div>
 </div>
+
+<!--一级分类的模态框-->
+<div class="modal fade" tabindex="-1" id="firstModal">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+        <h4 class="modal-title">添加分类</h4>
+      </div>
+      
+      <div class="modal-body">
+        <form id="form">
+          <div class="form-group">
+            <input type="text" class="form-control" name="categoryName" placeholder="请输入一级分类的名称">
+          </div>
+      </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+        <button type="submit" form="form" class="btn btn-primary">添加</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
+<script type="text/html" id="tmp">
+  {{ each rows v i }}
+  <tr>
+    <td>{{(page-1)*5+i+1}}</td>
+    <td>{{v.categoryName}}</td>
+  </tr>
+  {{/each}}
+</script>
 <script src="lib/jquery/jquery.min.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="lib/nprogress/nprogress.js"></script>
 <script src="js/comment.js"></script>
+<script src="lib/artTemplate/template-web.js"></script>
+<script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<script src="js/first.js"></script>

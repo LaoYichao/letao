@@ -26,17 +26,21 @@ $(function () {
       NProgress.done();
     }, 500);
   });
+  
   $("#classify").on("click",function () {
     $(this).next().toggle(400);
   })
+  
   $("#hide").on("click",function () {
     $("aside").toggleClass("active");
     $("section").toggleClass("active");
   })
+  
   $("#logout").on("click",function () {
     $('#logoutModal').modal("show");
   })
-  $(".btn-primary").on("click",function () {
+  
+  $(".logout_comfirm").on("click",function () {
     $.ajax({
       type:"get",
       url:"/employee/employeeLogout",
