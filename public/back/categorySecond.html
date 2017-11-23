@@ -106,7 +106,7 @@
         <h4 class="modal-title">添加分类</h4>
       </div>
       <div class="modal-body">
-        <form >
+        <form id="form">
           <div class="form-group">
             <div class="dropdown">
               <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" >
@@ -123,17 +123,26 @@
             <input type="text" name="brandName" class="form-control" placeholder="请输入二级分类名称">
           </div>
           <div class="form-group d-file">
+            <input type="hidden" name="brandLogo">
             <button class="btn btn-default">上传图片</button>
-            <input type="file" id="i-file" >
+            <input type="file" id="fileupload" name="pic1" data-url="/category/addSecondCategoryPic">
           </div>
           <div class="form-group">
-            <img src="imgs/none.png" alt="" width=100 height=100>
+            <img id="file-img" src="imgs/none.png" alt="" width=100 height=100>
+          </div>
+          <div class="form-group">
+            <label class="radio-inline">
+              <input type="radio" name="hot"  value="1">火的一匹
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="hot"  value="0"> 淘汰货
+            </label>
           </div>
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-        <button type="button" class="btn btn-primary logout_comfirm">确定</button>
+        <button type="submit" form="form" class="btn btn-primary add-second">确定</button>
       </div>
     </div>
   </div>
@@ -163,4 +172,6 @@
 <script src="js/comment.js"></script>
 <script src="lib/artTemplate/template-web.js"></script>
 <script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
+<script src="lib/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="lib/jquery-fileupload/jquery.fileupload.js"></script>
 <script src="js/second.js"></script>
