@@ -34,10 +34,11 @@ aside{
   width: 180px;
   height: 100%;
   background-color: #222d32;
-  position: absolute;
+  position: fixed;
   top:0;
   left:0;
   transition: all 1s;
+  z-index: 999;
 }
 aside.active{
   left:-180px;
@@ -90,6 +91,15 @@ section.active{
 .s-top{
   height: 50px;
   background-color: #3c8dbc;
+  position: fixed;
+  width: 100%;
+  top:0;
+  left:0;
+  padding-left: 180px;
+  transition: all 1s;
+}
+.s-top.active{
+  padding-left: 0;
 }
 .s-top a{
   font-size: 18px;

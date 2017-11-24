@@ -34,6 +34,7 @@ $(function () {
   $("#hide").on("click",function () {
     $("aside").toggleClass("active");
     $("section").toggleClass("active");
+    $(".s-top").toggleClass("active");
   })
   
   $("#logout").on("click",function () {

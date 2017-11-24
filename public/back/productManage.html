@@ -30,7 +30,7 @@
           <i class="glyphicon glyphicon-list"></i>
           分类管理
         </a>
-        <div class="child" >
+        <div class="child" style="display:none">
           <a href="categoryFirst.html">一级分类</a>
           <a href="categorySecond.html" >二级分类</a>
         </div>
@@ -113,6 +113,18 @@
       <div class="modal-body">
         <form id="form">
           <div class="form-group">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" >
+                <span class="dropdown-text">请选择二级分类</span>
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" >
+                <!--模板tmp2-->
+              </ul>
+            </div>
+            <input type="hidden" name="brandId">
+          </div>
+          <div class="form-group">
               <input type="text" name="proName" class="form-control"  placeholder="请输入商品名称">
           </div>
           <div class="form-group">
@@ -130,6 +142,15 @@
           <div class="form-group">
               <input type="text" name="size" class="form-control"  placeholder="请输入商品尺寸">
           </div>
+          <div class="form-group d-file">
+            <input type="hidden" name="product_pic">
+            <button class="btn btn-default">上传图片</button>
+            <input type="file" id="fileupload" name="pic1" data-url="/product/addProductPic" multiple>
+            <div class="img_box mt_20">
+              <!--模板3-->
+            </div>
+          </div>
+          <input type="hidden" name="statu" value="1">
         </form>
       </div>
       <div class="modal-footer">
@@ -142,6 +163,7 @@
 
 </body>
 </html>
+<!--二级信息模板-->
 <script type="text/html" id="tmp">
   {{ each rows v i }}
   <tr>
@@ -157,6 +179,16 @@
     </td>
   </tr>
   {{/each}}
+</script>
+<!--二级分类名称模板-->
+<script type="text/html" id="tmp2">
+{{each rows v i }}
+<li><a data-id={{v.id}} href="#">{{v.categoryName}}</a></li>
+{{/each}}
+</script>
+<!--图片模板-->
+<script type="text/html" id="tmp3">
+  <img src="{{picAddr}}" width=100 height=100 alt="">
 </script>
 
 <script src="lib/jquery/jquery.min.js"></script>
