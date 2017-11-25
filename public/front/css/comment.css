@@ -1,0 +1,141 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+li{
+  list-style: none;
+}
+img{
+  width: 100%;
+  vertical-align: middle;
+}
+html,body{
+  height: 100%;
+}
+.lt_container{
+  height: 100%;
+  padding-bottom: 50px;
+  padding-top: 45px;
+}
+
+.lt_topbar{
+  height: 45px;
+  width: 100%;
+  background-color: #069;
+  position: absolute;
+  top:0;
+  left:0;
+}
+.lt_topbar a{
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+  position: absolute;
+  top:0;
+}
+.lt_topbar .btn_right{
+  right:0;
+}
+.lt_topbar h4{
+  text-align: center;
+  line-height: 45px;
+  color: #fff;
+  margin: 0;
+}
+.lt_tabbar{
+  height: 50px;
+  width: 100%;
+  background-color: #069;
+  position: absolute;
+  bottom: 0;
+}
+.lt_tabbar a{
+  width: 25%;
+  height: 50px;
+  display: block;
+  text-align: center;
+  float: left;
+  color: #fff;
+  padding-top: 5px;
+}
+.lt_tabbar a.active{
+  color: orange;
+}
+.lt_tabbar p{
+  color: #fff;
+  margin: 0;
+}
+.lt_tabbar a.active p{
+  color: orange;
+}
+.lt_main{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+}
+.lt_main nav{
+  padding: 10px;
+}
+.lt_main nav a{
+  display: block;
+  width: 33.33%;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+.le_products{
+  padding: 10px;
+}
+.item{
+  display: inline-block;
+  width: 46%;
+  margin-right: 10px;
+  text-align: center;
+}
+.lt_search{
+  position: relative;
+}
+.lt_search input{
+  border: 1px solid #069;
+  height: 33px;
+  border-radius: 5px;
+  font-size: 14px;
+}
+.lt_search button{
+  height: 40px;
+  background-color: #069;
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0 5px 5px 0;
+}
+
+.lt_history .lt_his_top span{
+  font-size: 14px;
+  color: #ccc;
+  display: block;
+  height: 20px;
+  line-height: 20px;
+}
+.lt_his_message ul{
+  
+  margin-top: 20px;
+}
+.lt_his_message ul li{
+  border: 1px solid #ccc;
+  border-bottom: none;
+  padding-left:10px;
+  height: 30px;
+  line-height: 30px;
+}
+.lt_his_message ul li:last-child{
+  border-bottom: 1px solid #ccc;
+}
+.lt_his_message ul li a{
+  font-size: 14px;
+}
