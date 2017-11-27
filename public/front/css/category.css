@@ -40,3 +40,9 @@
   float: left;
   text-align: center;
 }
+.go_other{
+  height: 40px;
+  line-height: 40px;
+  padding-left: 10px;
+  font-size: 16px;
+}

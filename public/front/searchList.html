@@ -37,8 +37,8 @@
           <!--排序-->
           <div class="lt_sort mui-clearfix">
             <a href="javascript:;">上架时间 <span class="fa fa-angle-down"></span></a>
-            <a href="javascript:;" class="sort">价格 <span class="fa fa-angle-down"></span></a>
-            <a href="javascript:;" class="sort">库存 <span class="fa fa-angle-down"></span></a>
+            <a href="javascript:;" data-type="price" class="sort">价格 <span class="fa fa-angle-down"></span></a>
+            <a href="javascript:;" data-type="num" class="sort">库存 <span class="fa fa-angle-down"></span></a>
             <a href="javascript:;">折扣 <span class="fa fa-angle-down"></span></a>
           </div>
           
@@ -67,7 +67,7 @@
       <span class="fa fa-shopping-cart"></span>
       <p>购物车</p>
     </a>
-    <a href="#">
+    <a href="user.html">
       <span class="fa fa-user"></span>
       <p>会员中心</p>
     </a>
@@ -76,8 +76,11 @@
 </body>
 </html>
 <script type="text/html" id="tmp">
+  {{if data.length==0}}
+  <p>没有更多商品</p>
+  {{/if}}
 {{each data v i}}
-<a class="item" href="#">
+<a class="item" href="product.html?productId={{v.id}}">
   <img src="{{v.pic[0].picAddr}}" alt="">
   <p class="mui-ellipsis-2 mui-text-left">{{v.proName}} </p>
   <p>

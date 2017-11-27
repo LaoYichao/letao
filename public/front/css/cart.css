@@ -1,0 +1,64 @@
+.img_box{
+  width: 60px;
+  float: left;
+  margin-right: 10px;
+}
+.message_box{
+  overflow: hidden;
+}
+.message_box p:nth-child(2){
+  margin: 3px 0;
+}
+.mui-table-cell{
+  display: block;
+}
+.price{
+  color: red;
+  margin-right: 10px;
+}
+.oldprice{
+  text-decoration: line-through;
+}
+.ck{
+  margin-top: 10px;
+}
+.lt_container{
+  padding-bottom: 80px;
+}
+.lt_total{
+  line-height: 30px;
+}
+.lt_total p{
+  font-size: 14px;
+  color: red;
+  margin-left: 5px;
+  display: inline-block;
+  margin-bottom: 0;
+}
+.lt_total button{
+  background-color: red;
+  color: #fff;
+  margin: 0;
+  border:none;
+}
+.edit_size span{
+  border: 1px solid #ccc;
+  font-size: 12px;
+  padding: 3px;
+  text-align: left;
+  display: inline-block;
+  margin-bottom: 5px;
+}
+.edit_size span.active{
+  background-color: skyblue;
+}
+.mui-popup-text{
+  text-align: left;
+}
+.gobuy{
+  font-size: 20px;
+  color: red;
+  height: 50px;
+  line-height: 50px;
+  padding-left: 10px;
+}
